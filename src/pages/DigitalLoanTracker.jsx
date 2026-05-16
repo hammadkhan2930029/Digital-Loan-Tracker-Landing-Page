@@ -12,45 +12,45 @@ import WorkflowSection from '../components/digital-loan-tracker/WorkflowSection.
 import { staggerContainer } from '../components/digital-loan-tracker/animations.js'
 
 function DigitalLoanTracker() {
-  const [showSplash, setShowSplash] = useState(true)
+    const [showSplash, setShowSplash] = useState(true)
 
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setShowSplash(false)
-    }, 2300)
+    useEffect(() => {
+        const timer = window.setTimeout(() => {
+            setShowSplash(false)
+        }, 2300)
 
-    return () => window.clearTimeout(timer)
-  }, [])
+        return () => window.clearTimeout(timer)
+    }, [])
 
-  return (
-    <div className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--text-primary)]">
-      <SplashScreen visible={showSplash} />
-      <BackgroundGlow />
-      <AnimatePresence mode="wait">
-        {!showSplash ? (
-          <motion.div
-            key="page-content"
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="relative"
-          >
-            <Header />
+    return (
+        <div className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--text-primary)]">
+            <SplashScreen visible={showSplash} />
+            <BackgroundGlow />
+            <AnimatePresence mode="wait">
+                {!showSplash ? (
+                    <motion.div
+                        key="page-content"
+                        variants={staggerContainer}
+                        initial="hidden"
+                        animate="visible"
+                        className="relative"
+                    >
+                        <Header />
 
-            <main className="relative z-10">
-              <HeroSection />
-              <FeaturesSection />
-              <WorkflowSection />
-              <ExtraInfoSection />
-              <CTASection />
-            </main>
+                        <main className="relative z-10">
+                            <HeroSection />
+                            <FeaturesSection />
+                            <WorkflowSection />
+                            <ExtraInfoSection />
+                            <CTASection />
+                        </main>
 
-            <Footer />
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </div>
-  )
+                        <Footer />
+                    </motion.div>
+                ) : null}
+            </AnimatePresence>
+        </div>
+    )
 }
 
 export default DigitalLoanTracker

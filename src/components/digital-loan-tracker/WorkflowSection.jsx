@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { steps } from '../../data/digitalLoanTrackerContent'
 import { fadeUp, smoothTransition, staggerContainer } from './animations'
+import PlayStoreBadge from './PlayStoreBadge.jsx'
 
 function StepItem({ step, index }) {
   return (
@@ -53,6 +54,9 @@ function WorkflowSection() {
             Digital Loan Tracker keeps the complete journey simple, secure, and
             easy to understand for every user.
           </p>
+          <div className="mt-8">
+            <PlayStoreBadge />
+          </div>
         </motion.div>
 
         <motion.div
