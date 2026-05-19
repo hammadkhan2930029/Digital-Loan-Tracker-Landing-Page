@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import logoImage from '../assets/logo.jpg'
+import AppLink from '../components/digital-loan-tracker/AppLink.jsx'
 import BackgroundGlow from '../components/digital-loan-tracker/BackgroundGlow.jsx'
 import CursorEffect from '../components/digital-loan-tracker/CursorEffect.jsx'
 import { fadeUp, staggerContainer } from '../components/digital-loan-tracker/animations.js'
@@ -153,7 +154,7 @@ function PrivacyPolicy() {
       <BackgroundGlow />
 
       <header className="relative z-10 mx-auto flex max-w-5xl items-center justify-between px-5 py-6 md:px-8">
-        <a href="/" className="flex items-center gap-3">
+        <AppLink href="/" className="flex items-center gap-3">
           <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-[var(--surface)] shadow-[var(--shadow-soft)] ring-1 ring-[var(--border)]">
             <img
               src={logoImage}
@@ -169,14 +170,14 @@ function PrivacyPolicy() {
               Privacy Policy
             </span>
           </span>
-        </a>
+        </AppLink>
 
-        <a
+        <AppLink
           href="/"
           className="rounded-full border border-[var(--border-strong)] bg-[var(--surface)] px-5 py-2.5 text-sm font-bold text-[var(--text-primary)] shadow-[var(--shadow-soft)] transition hover:bg-[var(--primary-50)]"
         >
           Home
-        </a>
+        </AppLink>
       </header>
 
       <main className="relative z-10 mx-auto max-w-5xl px-5 pb-16 pt-8 md:px-8">

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import AppLink from './AppLink.jsx'
 import { fadeUp } from './animations'
 
 function Footer() {
@@ -12,12 +13,12 @@ function Footer() {
           {'(c)'} {new Date().getFullYear()} Digital Loan Tracker. All rights
           reserved.
         </span>
-        <a
-          href="/privacy-policy"
+        <AppLink
+          href="/privacy-policy/"
           className="font-semibold text-[var(--text-secondary)] transition hover:text-[var(--accent-400)]"
         >
           Privacy Policy
-        </a>
+        </AppLink>
       </div>
     </motion.footer>
   )

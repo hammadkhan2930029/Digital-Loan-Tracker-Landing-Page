@@ -6,4 +6,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   cacheDir: '.vite-cache',
   plugins: [react(), tailwindcss()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        privacyPolicy: 'privacy-policy/index.html',
+      },
+    },
+  },
 })
