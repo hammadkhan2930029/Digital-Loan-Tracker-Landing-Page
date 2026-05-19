@@ -7,7 +7,18 @@ function Footer() {
       variants={fadeUp}
       className="relative z-10 border-t border-[var(--border)] px-5 py-8 text-center text-sm text-[var(--text-muted)] md:px-8"
     >
-      {'(c)'} {new Date().getFullYear()} Digital Loan Tracker. All rights reserved.
+      <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <span>
+          {'(c)'} {new Date().getFullYear()} Digital Loan Tracker. All rights
+          reserved.
+        </span>
+        <a
+          href="/privacy-policy"
+          className="font-semibold text-[var(--text-secondary)] transition hover:text-[var(--accent-400)]"
+        >
+          Privacy Policy
+        </a>
+      </div>
     </motion.footer>
   )
 }

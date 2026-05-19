@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import BackgroundGlow from '../components/digital-loan-tracker/BackgroundGlow.jsx'
 import CTASection from '../components/digital-loan-tracker/CTASection.jsx'
+import CursorEffect from '../components/digital-loan-tracker/CursorEffect.jsx'
 import ExtraInfoSection from '../components/digital-loan-tracker/ExtraInfoSection.jsx'
 import FeaturesSection from '../components/digital-loan-tracker/FeaturesSection.jsx'
 import Footer from '../components/digital-loan-tracker/Footer.jsx'
@@ -24,6 +25,7 @@ function DigitalLoanTracker() {
 
     return (
         <div className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--text-primary)]">
+            <CursorEffect />
             <SplashScreen visible={showSplash} />
             <BackgroundGlow />
             <AnimatePresence mode="wait">

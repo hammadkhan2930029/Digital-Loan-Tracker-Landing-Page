@@ -31,7 +31,12 @@ function PlayStoreBadge({ href = appLinks.playStore, compact = false }) {
         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">
           Download on
         </p>
-        <p className={compact ? 'text-sm font-black' : 'text-base font-black'}>
+        <p
+          className={[
+            compact ? 'text-sm' : 'text-base',
+            'font-black text-[var(--text-primary)]',
+          ].join(' ')}
+        >
           Google Play
         </p>
       </div>
