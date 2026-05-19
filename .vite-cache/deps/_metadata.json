@@ -1,49 +1,49 @@
 {
-  "hash": "126ab852",
-  "configHash": "76d47759",
+  "hash": "4ba5e102",
+  "configHash": "1d40d3d4",
   "lockfileHash": "9817744b",
-  "browserHash": "30bdd1b4",
+  "browserHash": "ad8c89cd",
   "optimized": {
     "framer-motion": {
       "src": "../../node_modules/framer-motion/dist/es/index.mjs",
       "file": "framer-motion.js",
-      "fileHash": "396c8052",
+      "fileHash": "e56d5e9a",
       "needsInterop": false
     },
     "lucide-react": {
       "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
       "file": "lucide-react.js",
-      "fileHash": "e90ad0e2",
+      "fileHash": "20989a0b",
       "needsInterop": false
     },
     "react-dom": {
       "src": "../../node_modules/react-dom/index.js",
       "file": "react-dom.js",
-      "fileHash": "038d98b9",
+      "fileHash": "3c62e119",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "707d5b3d",
+      "fileHash": "547a11aa",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "433374d6",
+      "fileHash": "7bb16719",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "51bc5181",
+      "fileHash": "2d1f9278",
       "needsInterop": true
     },
     "react/jsx-runtime": {
       "src": "../../node_modules/react/jsx-runtime.js",
       "file": "react_jsx-runtime.js",
-      "fileHash": "83e300ae",
+      "fileHash": "56351cc8",
       "needsInterop": true
     }
   },

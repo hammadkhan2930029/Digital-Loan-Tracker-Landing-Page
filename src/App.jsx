@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import DigitalLoanTracker from './pages/DigitalLoanTracker.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import TermsConditions from './pages/TermsConditions.jsx'
 
 function App() {
   const [pathname, setPathname] = useState(() =>
@@ -20,6 +21,10 @@ function App() {
 
   if (pathname === '/privacy-policy') {
     return <PrivacyPolicy />
+  }
+
+  if (pathname === '/terms-and-conditions') {
+    return <TermsConditions />
   }
 
   return <DigitalLoanTracker />

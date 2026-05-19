@@ -6,105 +6,92 @@ import CursorEffect from '../components/digital-loan-tracker/CursorEffect.jsx'
 import Footer from '../components/digital-loan-tracker/Footer.jsx'
 import { fadeUp, staggerContainer } from '../components/digital-loan-tracker/animations.js'
 
-const policySections = [
+const termsSections = [
   {
-    title: '1. Information We Collect',
-    groups: [
-      {
-        label: 'a. Personal Information',
-        items: ['Name', 'Phone number', 'Email (optional)'],
-      },
-      {
-        label: 'b. User Data',
-        items: [
-          'Contacts added by you',
-          'Transaction records (amount, date, notes)',
-          'Attachments (images, PDFs such as payment slips)',
-        ],
-      },
-      {
-        label: 'c. Device Information',
-        items: [
-          'Device type',
-          'OS version',
-          'App usage data (for performance and analytics)',
-        ],
-      },
-    ],
-  },
-  {
-    title: '2. How We Use Your Information',
-    intro: 'We use your data to:',
+    title: '1. Nature of Service',
+    intro: 'Digital Loan Tracker is:',
     items: [
-      'Provide and operate the app',
-      'Maintain your transaction records',
-      'Improve user experience',
-      'Send reminders (if enabled)',
-      'Ensure security and prevent misuse',
+      'A record-keeping tool',
+      'Designed to track lending and borrowing between individuals',
+    ],
+    outro: 'It is NOT:',
+    outroItems: [
+      'A financial institution',
+      'A lending platform',
+      'A legal authority',
     ],
   },
   {
-    title: '3. Data Storage & Security',
+    title: '2. User Responsibility',
+    intro: 'You agree that:',
     items: [
-      'Your data may be stored securely on cloud servers',
-      'We implement reasonable security measures to protect your data',
-      'However, no system is 100% secure',
+      'All data entered is your responsibility',
+      'You will use the app lawfully',
+      'You will not misuse the platform',
     ],
   },
   {
-    title: '4. Attachments (Proof Uploads)',
+    title: '3. Accuracy of Records',
     items: [
-      'Files uploaded (images/PDFs) are stored securely',
-      'These are accessible only to you unless you share them',
+      'The app does not verify transactions',
+      'Entries are user-generated',
+      'We do not guarantee correctness',
     ],
   },
   {
-    title: '5. Data Sharing',
-    intro: 'We do NOT sell your data. We may share data only:',
-    items: ['With service providers (hosting, analytics)', 'If required by law'],
-  },
-  {
-    title: '6. User Responsibility',
-    intro: 'You are responsible for:',
+    title: '4. No Financial Liability',
+    intro: 'We are not responsible for:',
     items: [
-      'Accuracy of data entered',
-      'Content uploaded (including proof documents)',
+      'Financial losses',
+      'Disputes between users',
+      'Misuse of records',
     ],
   },
   {
-    title: '7. Data Retention',
+    title: '5. Attachments & Content',
+    intro: 'You agree not to upload:',
     items: [
-      'Data is stored as long as your account is active',
-      'You may request deletion at any time',
+      'Illegal content',
+      'Fraudulent documents',
+      "Content violating others' rights",
     ],
   },
   {
-    title: '8. Your Rights',
-    intro: 'You can:',
+    title: '6. Account Usage',
     items: [
-      'Access your data',
-      'Update your information',
-      'Request deletion of your account',
+      'You are responsible for maintaining account security',
+      'Unauthorized use must be reported immediately',
     ],
   },
   {
-    title: '9. Third-Party Services',
-    intro:
-      'The app may use cloud storage providers and analytics tools. These services have their own privacy policies.',
+    title: '7. Termination',
+    intro: 'We may suspend or terminate accounts that:',
+    items: ['Violate terms', 'Misuse the app'],
   },
   {
-    title: '10. Changes to This Policy',
-    intro:
-      'We may update this policy from time to time. Changes will be notified within the app.',
+    title: '8. Modifications',
+    intro: 'We may update features or terms at any time.',
   },
   {
-    title: '11. Contact Us',
-    intro: 'For questions:',
+    title: '9. Limitation of Liability',
+    intro: 'We are not liable for:',
+    items: [
+      'Indirect damages',
+      'Loss of data',
+      'Financial disputes',
+    ],
+  },
+  {
+    title: '10. Governing Law',
+    intro: 'These terms are governed by the laws of Pakistan.',
+  },
+  {
+    title: '11. Contact',
     items: ['Email: digiloantracker@gmail.com'],
   },
 ]
 
-function PolicySection({ section }) {
+function TermsSection({ section }) {
   return (
     <motion.section
       variants={fadeUp}
@@ -120,26 +107,23 @@ function PolicySection({ section }) {
         </p>
       ) : null}
 
-      {section.groups ? (
-        <div className="mt-5 space-y-5">
-          {section.groups.map((group) => (
-            <div key={group.label}>
-              <h3 className="font-bold text-[var(--text-primary)]">
-                {group.label}
-              </h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-[var(--text-secondary)]">
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      ) : null}
-
       {section.items ? (
         <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-[var(--text-secondary)]">
           {section.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
+
+      {section.outro ? (
+        <p className="mt-5 leading-8 text-[var(--text-secondary)]">
+          {section.outro}
+        </p>
+      ) : null}
+
+      {section.outroItems ? (
+        <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-[var(--text-secondary)]">
+          {section.outroItems.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
@@ -148,7 +132,7 @@ function PolicySection({ section }) {
   )
 }
 
-function PrivacyPolicy() {
+function TermsConditions() {
   return (
     <div className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--text-primary)]">
       <CursorEffect />
@@ -168,7 +152,7 @@ function PrivacyPolicy() {
               Digital Loan Tracker
             </span>
             <span className="block text-xs text-[var(--text-secondary)]">
-              Privacy Policy
+              Terms & Conditions
             </span>
           </span>
         </AppLink>
@@ -190,20 +174,18 @@ function PrivacyPolicy() {
         >
           <motion.div variants={fadeUp} className="mb-8">
             <p className="font-bold uppercase tracking-[0.25em] text-[var(--accent-400)]">
-              Effective Date: April 24, 2026
+              Effective Date: 24 April 2026
             </p>
             <h1 className="mt-3 text-4xl font-black tracking-tight text-[var(--text-primary)] md:text-6xl">
-              Privacy Policy
+              Terms & Conditions
             </h1>
             <p className="mt-5 max-w-3xl leading-8 text-[var(--text-secondary)]">
-              This Privacy Policy describes how Digital Loan Tracker ("we",
-              "our", "us") collects, uses, and protects your information when
-              you use our mobile application ("App").
+              By using Digital Loan Tracker, you agree to the following terms.
             </p>
           </motion.div>
 
-          {policySections.map((section) => (
-            <PolicySection key={section.title} section={section} />
+          {termsSections.map((section) => (
+            <TermsSection key={section.title} section={section} />
           ))}
         </motion.div>
       </main>
@@ -213,4 +195,4 @@ function PrivacyPolicy() {
   )
 }
 
-export default PrivacyPolicy
+export default TermsConditions
